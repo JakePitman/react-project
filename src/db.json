@@ -1,0 +1,16 @@
+{
+  "ratingQuestions": [
+    {
+      "title": "hello world",
+      "id": 2
+    },
+    {
+      "title": "goodbye world",
+      "id": 3
+    },
+    {
+      "title": "something new",
+      "id": 4
+    }
+  ]
+}
