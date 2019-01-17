@@ -1,3 +1,11 @@
-h1, p {
-  font-family: Lato;
+* {
+  margin: 0;
+  font-family: 'Arial Narrow';
+}
+body {
+  background: #e6e8f3;
+}
+
+h1 {
+  font-weight: lighter;
 }

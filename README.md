@@ -5,4 +5,4 @@ $ yarn
 $ yarn start
 
 #Serve JSON
-% arn json-server -p 3001 src/db.json
+% yarn json-server -p 3001 src/db.json

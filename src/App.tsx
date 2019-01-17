@@ -1,16 +1,27 @@
 import * as React from 'react'
-// import axios from 'axios';
 import axios, { AxiosRequestConfig, AxiosPromise, AxiosResponse } from 'axios';
-import RatingQuestion from './RatingQuestion'
-import NewQuestionForm from './NewQuestionForm'
+import styled from 'styled-components';
+import RatingQuestion from './components/RatingQuestion'
+import NewQuestionForm from './components/NewQuestionForm'
+import {
+  Question,
+  QuestionData
+} from './components/interfaces'
 
 
-interface Question {
-    id: number; 
-    title: string;
-}
+const AppContainer = styled.div`
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`
 
-type QuestionData = [Question]
+const QuestionsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+`
 
 class App extends React.Component {
   state = {
@@ -78,18 +89,20 @@ class App extends React.Component {
   render() {
     const { name, ratingQuestionData } = this.state
     return (
-      <div>
-        {
-          ratingQuestionData ?
-          this.renderRatingQuestions(ratingQuestionData) :
-          <h1>LOADING DATA</h1>
-        }
+      <AppContainer>
+        <QuestionsContainer>
+          {
+            ratingQuestionData ?
+            this.renderRatingQuestions(ratingQuestionData) :
+            <h1>LOADING DATA</h1>
+          }
+        </QuestionsContainer>
 
         <NewQuestionForm 
           updateNewQuestionTitleData={this.updateNewQuestionTitleData} 
           sendNewQuestionTitleData={this.sendNewQuestionTitleData}
         />
-      </div>
+      </AppContainer>
     );
   }
 
